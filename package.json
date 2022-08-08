@@ -1,0 +1,28 @@
+{
+  "name": "nodejsapp",
+  "version": "1.0.0",
+  "description": "this a dockerized nestjs application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start-dev": "nodemon app.js",
+    "build": "npm run build:prod",
+    "build:prod": "cross-env NODE_ENV=production npm run build",
+    "build:dev": "cross-env NODE_ENV=development npm run build",
+    "build:watch": "npm run build:dev && npm run start:dev",
+    "build:watch:prod": "npm run build:prod && npm run start",
+    "build:watch:dev": "npm run build:dev && npm run start:dev",
+    "lint": "eslint --ext .js,.vue src"
+  },
+  "keywords": [],
+  "author": "haithem",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

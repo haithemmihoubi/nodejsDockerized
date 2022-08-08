@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  nodejs-app:
+    build:
+      context: .
+    volumes:
+      - ./src:/app/src:ro
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    command:
+      - npm run start
