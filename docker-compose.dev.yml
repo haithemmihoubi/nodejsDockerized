@@ -1,14 +1,9 @@
 version: "3.3"
 services:
   nodejs-app:
-    build: .
     volumes:
       - ./src:/app/src:ro
       - ./views:/app/views:ro
     environment:
       - NODE_ENV=development
       - PORT=3000
-    ports:
-      - "3000:3000"
-      - "3001:3001"
-
