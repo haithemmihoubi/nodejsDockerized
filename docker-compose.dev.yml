@@ -2,7 +2,7 @@ version: "3.3"
 services:
   nodejs-app:
     volumes:
-        - .:/app
+        - .:/app:ro
         - ./.env:/app/.env
         - ./views:/app/views
         - ./src:/app/src
@@ -11,6 +11,7 @@ services:
     ports:
       - "3000:3000"
       - "3001:3001"
+
 
 
 
