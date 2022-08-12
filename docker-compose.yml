@@ -6,14 +6,17 @@ services:
     build: .
     ports:
       - "3000:3000"
-      - "3001:3001"
     env_file:
       - ./.env
-  mongo:
+    # app name
+  mongodb:
     image: mongo
-    restart: always
+    container_name: mongodb-container
+    volumes:
+        - mongodb:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-
-
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+      - MONGO_INITDB_DATABASE=nodejs-app
+volumes:
+  mongodb:
